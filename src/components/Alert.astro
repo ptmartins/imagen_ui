@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon/components';
+const {type, message} = Astro.props;
+let icon = '';
+let alertClasses = 'alert';
+
+switch(type) {
+    case 'error':
+            icon = 'mdi:error';
+            alertClasses += ' alert--error';
+            break;
+        case 'warning':
+            icon = 'mdi:warning';
+            alertClasses += ' alert--warning';
+            break;
+        case 'info':
+            icon = 'mdi:information';
+            alertClasses += ' alert--info';
+            break;
+        case 'success':
+            icon = 'mdi:success-circle';
+            alertClasses += ' alert--success';
+            break;
+        default:
+            break;
+}
+
+---
+
+<div class={ alertClasses }>
+    <span class="icon"> <Icon name={ icon } /> </span>
+    <div class="txt"> { message } </div>
+</div>   
+
+<style lang="less">
+    .alert {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        display: flex;
+        gap: .75rem;
+        padding: .75rem;
+
+        &--error {
+            background-color: #fef2f2;
+            border-color: #f56565;
+            color: #f56565;
+        }
+
+        &--warning {
+            background-color: #FEFAF0;
+            border-color: #dbac20;
+            color: #856404;
+        }
+
+        &--info {
+            background-color: #ebf8ff;
+            border-color: #2b6cb0;
+            color: #2b6cb0;
+        }
+
+        &--success {
+            background-color: #c5ffc6;
+            border-color: #155724;
+            color: #155724;
+        }
+    
+    }
+</style>

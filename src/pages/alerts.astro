@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Alert from '../components/Alert.astro';
+---
+
+<Layout title="Alerts">
+    <h1 class="title">Alerts</h1>
+
+    <section class="section section--alerts">
+        <Alert type="error" message="This is an error alert!" />
+        <br />
+        <Alert type="warning" message="This is a warning alert!" />
+        <br />
+        <Alert type="info" message="This is an info alert!" />
+        <br />
+        <Alert type="success" message="This is a success alert!" />
+    </section>
+</Layout>
+
+<style>
+    .section--alerts {
+        width: 50%; 
+    }
+</style>

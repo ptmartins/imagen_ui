@@ -1,0 +1,87 @@
+---
+const {items} = Astro.props;
+---
+
+<div class="accordion">
+    {items.map(item => (
+        <div class="accordion__item">
+            <div class="accordion__title">
+                {item.title}
+            </div>
+            <div class="accordion__content">
+                <p>{item.content}</p>
+            </div>
+        </div>
+    ))}
+</div>    
+
+<style>
+
+    .accordion {
+        margin-bottom: 3rem;
+    }
+
+    .accordion__item {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-bottom: 0;
+        border-radius: .1875rem;
+    }
+
+    .accordion__item:last-child {
+        border-bottom: 1px solid rgba(0, 0, 0, .125);
+    }
+
+
+    .accordion__title {
+        background-color: #fff;
+        cursor: pointer;
+        font-weight: 700;
+        padding: .75rem 1.5rem;
+
+    }
+    
+    .active .accordion__title,
+    .accordion__title:hover {
+        background-color: #e9ecef;
+    }
+
+    .accordion__content {
+        display: block;
+        max-height: 0;
+        opacity: .85;
+        overflow: hidden;
+        transition: all .4s ease;
+    }
+
+    .accordion__content p {
+        padding: .1875rem 1.5rem 1.5rem;
+    }
+    
+    .active > .accordion__content {
+        max-height: 100vh;
+    }
+
+</style>
+
+<script>
+    const accordionItems = document.getElementsByClassName('accordion__item');
+    let index = null;
+
+    const closeAccordions = () => {
+        for(let i = 0; i < accordionItems.length; i++) {
+            if(accordionItems[i].classList.contains('active')) {
+                accordionItems[i].classList.remove('active');
+            }
+        }
+    }
+    
+    const onItemClick = i => {
+        closeAccordions();
+        accordionItems[i].classList.add('active');
+    }
+
+    for(let i = 0; i < accordionItems.length; i++) {
+        accordionItems[i].addEventListener('click', onItemClick.bind(this, i));
+    }
+</script>

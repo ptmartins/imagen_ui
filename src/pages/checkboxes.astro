@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Page from '../layouts/Page.astro';
+import Checkbox from '../components/Checkbox.astro';
+
+const title = 'Checkboxes';
+---
+
+<Layout title={ title }>
+    <Page title={ title }> 
+        <section class={`section section--${title.toLowerCase()}`}>
+            <Checkbox label="Default input checkbox" />
+            <Checkbox label="Cheked input checkbox" checked="true" />
+        </section>  
+    </Page> 
+</Layout>   

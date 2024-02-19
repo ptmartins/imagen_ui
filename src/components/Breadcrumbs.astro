@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+const {items} = Astro.props;
+---
+
+<div class="breadcrumbs">
+    {items ? items.map(item => {
+        return(
+            <>
+                <span class="breadcrumb"> {item} <i> <Icon name="mdi:chevron-right" /> </i> </span>
+            </>)
+    }) : ''}
+</div>  
+
+<style>
+    .breadcrumbs {
+        align-items: center;
+        color: #9a9b9e;
+        display: flex;
+    }
+
+    .breadcrumb {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        transition: color .2s ease;
+    }
+
+    .breadcrumb:hover {
+        color: #333;
+    }
+
+    .breadcrumb i {
+        align-items: center;
+        display: flex;
+        margin: 0 .375rem;
+    }
+
+    .breadcrumb:last-child i {
+        display: none;
+    }
+</style>

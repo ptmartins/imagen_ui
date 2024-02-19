@@ -1,46 +1,49 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Page from '../layouts/Page.astro';
 import Button from '../components/Button.astro';
 import { Icon } from 'astro-icon/components';
+
+const title = 'Buttons';
 ---
 
-<Layout title="Buttons">
+<Layout title={ title }>
 
-    <h1 class="title">Buttons</h1>
-
-    <section class="section section--buttons">
-        <h2 class="section__title">Solid Buttons</h2>
-        <Button>Simple button</Button>
-        <Button>Icon button <Icon name="mdi:emoticon" /> </Button>
-        <Button type="primary">Primary button</Button>
-        <Button type="danger">Danger button</Button>
-        <Button type="success">Success button</Button>
-        <Button type="warning">Warning button</Button>
-        <Button size="mini">Mini button</Button>
-
-    </section>
-
-    <section class="section section--buttons">
-        <h2 class="section__title">Outlined Buttons</h2>
-        <Button variant="outlined">Simple button</Button>
-        <Button variant="outlined">Icon button <Icon name="mdi:emoticon" /> </Button>
-        <Button variant="outlined" type="primary">Primary button</Button>
-        <Button variant="outlined" type="danger">Danger button</Button>
-        <Button variant="outlined" type="success">Success button</Button>
-        <Button variant="outlined" type="warning">Warning button</Button>
-        <Button variant="outlined" size="mini">Mini button</Button>
-    </section>
-
-    <section class="section section--buttons">
-        <h2 class="section__title">Disabled buttons</h2>
-        <Button state="disabled">Simple button</Button>
-        <Button state="disabled">Icon button <Icon name="mdi:emoticon" /> </Button>
-        <Button type="primary" state="disabled">Primary button</Button>
-        <Button type="danger" state="disabled">Danger button</Button>
-        <Button type="success" state="disabled">Success button</Button>
-        <Button type="warning" state="disabled">Warning button</Button>
-        <Button state="disabled" size="mini">Mini button</Button>
-    </section>
+    <Page title={ title }> 
+        <section class={`section section--${title.toLowerCase()}`}>
+            <h2 class="section__title">Solid Buttons</h2>
+            <Button>Simple button</Button>
+            <Button>Icon button <Icon name="mdi:emoticon" /> </Button>
+            <Button type="primary">Primary button</Button>
+            <Button type="danger">Danger button</Button>
+            <Button type="success">Success button</Button>
+            <Button type="warning">Warning button</Button>
+            <Button size="mini">Mini button</Button>
+    
+        </section>
+    
+        <section class={`section section--${title.toLowerCase()}`}>
+            <h2 class="section__title">Outlined Buttons</h2>
+            <Button variant="outlined">Simple button</Button>
+            <Button variant="outlined">Icon button <Icon name="mdi:emoticon" /> </Button>
+            <Button variant="outlined" type="primary">Primary button</Button>
+            <Button variant="outlined" type="danger">Danger button</Button>
+            <Button variant="outlined" type="success">Success button</Button>
+            <Button variant="outlined" type="warning">Warning button</Button>
+            <Button variant="outlined" size="mini">Mini button</Button>
+        </section>
+    
+        <section class={`section section--${title.toLowerCase()}`}>
+            <h2 class="section__title">Disabled buttons</h2>
+            <Button state="disabled">Simple button</Button>
+            <Button state="disabled">Icon button <Icon name="mdi:emoticon" /> </Button>
+            <Button type="primary" state="disabled">Primary button</Button>
+            <Button type="danger" state="disabled">Danger button</Button>
+            <Button type="success" state="disabled">Success button</Button>
+            <Button type="warning" state="disabled">Warning button</Button>
+            <Button state="disabled" size="mini">Mini button</Button>
+        </section>
+    </Page>
 
 </Layout>
 

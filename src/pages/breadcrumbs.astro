@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Page from '../layouts/Page.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+const breadcrumbs = ['Home', 'About', 'Team'];
+const title = 'Breadcrumbs';
+---
+
+<Layout title={ title }>
+    <Page title={ title }> 
+        <section class="section section--breadcrumbs">
+            <Breadcrumbs items={ breadcrumbs } />
+        </section>
+    </Page>
+</Layout>

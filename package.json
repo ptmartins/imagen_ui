@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "astro": "^4.4.0",
-    "astro-icon": "^1.1.0"
+    "astro-icon": "^1.1.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",
